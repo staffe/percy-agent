@@ -31,6 +31,9 @@ export async function postSnapshot(body: any) {
       maxContentLength: ONE_HUNDRED_MB_IN_BYTES,
       url: URL,
       data: body,
+      headers: {
+        connection: 'keep-alive',
+      },
     } as any).then(() => {
       return true
     }).catch((error) => {
